@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -649,7 +649,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.050399274, y: -0, z: -0, w: 0.99872917}
-  m_LocalPosition: {x: -0.00011396408, y: 1.57, z: -4.29}
+  m_LocalPosition: {x: 2.107, y: 1.57, z: -4.29}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1410,6 +1410,7 @@ GameObject:
   - component: {fileID: 1247063519}
   - component: {fileID: 1247063517}
   - component: {fileID: 1247063515}
+  - component: {fileID: 1247063520}
   m_Layer: 0
   m_Name: sedan-car-01
   m_TagString: Untagged
@@ -1437,7 +1438,7 @@ MonoBehaviour:
   frontLeftTransform: {fileID: 1737246713}
   backRightTransform: {fileID: 342136252}
   backLeftTransform: {fileID: 166701674}
-  acceleration: 500
+  acceleration: 1000
   brakingForce: 300
   maxTurnAngle: 15
 --- !u!1 &1247063516
@@ -1524,6 +1525,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1247063520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1247063514}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4993db64cc5b64abdb60b2561c4f9620, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CenterOfMass2: {x: 0, y: 0.27, z: 0}
+  Awake: 0
 --- !u!33 &1248293280
 MeshFilter:
   m_ObjectHideFlags: 0
