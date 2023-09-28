@@ -15,8 +15,6 @@ public class CenterOfGravity : MonoBehaviour
     {
         r = GetComponent<Rigidbody>();
     }
-
-    // Update is called once per frame
     void Update()
     {
         r.centerOfMass = CenterOfMass2;
@@ -26,7 +24,7 @@ public class CenterOfGravity : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.magenta;
+        Gizmos.color = Color.red;
         Gizmos.DrawSphere(transform.position + transform.rotation * CenterOfMass2, 0.1f);
     }
 }
