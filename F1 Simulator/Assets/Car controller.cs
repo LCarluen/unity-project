@@ -15,20 +15,27 @@ public class WheelController : MonoBehaviour {
    [SerializeField] Transform backLeftTransform;
 
    public float acceleration = 0f;
+   public float reverse = 0f;
    public float brakingForce = 0f;
    public float maxTurnAngle = 0f;
 
-   private float currentAcceleration = 0f;
+
+   private float currentAcceleration = 0f; 
    private float currentBrakeForce = 0f;
    private float currentTurnAngle = 0f;
 
    private void FixedUpdate() {
-      float accelerationInput = Input.GetAxis("Vertical");
-      currentAcceleration = accelerationInput * acceleration;
+        if (Input.GetKey(KeyCode.W))
+          currentAcceleration = acceleration;
+        else if (Input.GetKey(KeyCode.DownArrow))
+            currentAcceleration = -500f;
+        else
+          currentAcceleration = 0f;
 
-      if (Input.GetKey(KeyCode.S))
+
+        if (Input.GetKey(KeyCode.S))
           currentBrakeForce = brakingForce;
-      else
+        else
           currentBrakeForce = 0f;
 
       backRight.motorTorque = currentAcceleration;
