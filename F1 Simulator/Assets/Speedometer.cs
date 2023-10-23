@@ -8,59 +8,83 @@ public class Speedometer : MonoBehaviour
 {
     public Rigidbody target;
 
-    public float maxSpeed = 0.0f;
+    private float maxSpeed = 0.0f;
 
-    public float minSpeedNeedleAngle;
-    public float maxSpeedNeedleAngle;
-
-    public int RPM;
-    public int MaxRPM;
-    public int ChangeRPM;
-    public float[] Gearbox;
-    public Text gearText;
-    public int currentGear;
-    public bool CanShiftGear = false;
-    public float torque;
+    public float minSpeedArrowAngle;
+    public float maxSpeedArrowAngle;
+    private int currentGear;
 
     [Header("UI")]
     public Text speedValue;
+    public Text gearValue;
     public RectTransform needle;
 
     private float speed = 0.0f;
-    private void Update(Rigidbody rigidbody)
+    private void Update()
     {
-        if (RPM >= ChangeRPM && CanShiftGear && currentGear != Gearbox.Length - 1)
-        { currentGear++; CanShiftGear = false; }
-
-        if (RPM <= 2000f && CanShiftGear && currentGear != 0)
-        { currentGear--; CanShiftGear = false; }
-
-        if (RPM < ChangeRPM)
-        { CanShiftGear = true; }
-
-        if (currentGear == Gearbox.Length - 1)
-        { CanShiftGear = false; }
-
-        speed = rigidbody.velocity.magnitude;
-        GearBox();
-
 
         speed = target.velocity.magnitude * 2.237f;
 
         if (speedValue != null)
+        {
             speedValue.text = ((int)speed) + " mph";
+        }
+
         if (needle != null)
+        {
             needle.localEulerAngles =
-                new Vector3(0, 0, Mathf.Lerp(minSpeedNeedleAngle, maxSpeedNeedleAngle, speed / maxSpeed));
+               new Vector3(0, 0, Mathf.Lerp(minSpeedArrowAngle, maxSpeedArrowAngle, speed / maxSpeed));
+        }
+
+
+        if (speed <= 80.0f)
+        {
+            currentGear = 1;
+            maxSpeed = 80.0f;
+            gearValue.text = "" + currentGear;
+        }
+
+        else if (speed > 80.0f && speed <= 90.0f)
+        {
+            currentGear = 2;
+            maxSpeed = 90.0f;
+            gearValue.text = "" + currentGear;
+        }
+
+        else if (speed > 90.0f && speed <= 110.0f)
+        {
+            currentGear = 3;
+            maxSpeed = 110.0f;
+            gearValue.text = "" + currentGear;
+        }
+
+        else if (speed > 110.0f && speed <= 130.0f)
+        {
+            currentGear = 4;
+            maxSpeed = 130.0f;
+            gearValue.text = "" + currentGear;
+        }
+
+        else if (speed > 130.0f && speed <= 150.0f)
+        {
+            currentGear = 5;
+            maxSpeed = 150.0f;
+            gearValue.text = "" + currentGear;
+        }
+
+        else if (speed > 150.0f && speed <= 172.0f)
+        {
+            currentGear = 6;
+            maxSpeed = 172.0f;
+            gearValue.text = "" + currentGear;
+        }
+
+        else if (speed > 172.0f)
+        {
+            currentGear = 7;
+            maxSpeed = 221.0f;
+            gearValue.text = "" + currentGear;
+        }
+
     }
-    void GearBox()
-    {
-        if (speed >= Gearbox[currentGear])
-        { torque = 0f; }
-        else
-        { torque = 1f; }
-
-
-    }
-
 }
