@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 1817236227}
-  m_IndirectSpecularColor: {r: 0.45140058, g: 0.50050086, b: 0.57022893, a: 1}
+  m_IndirectSpecularColor: {r: 0.45139974, g: 0.5005002, b: 0.5702279, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -372,7 +372,7 @@ WheelCollider:
     m_Stiffness: 0.9
   m_SidewaysFriction:
     m_ExtremumSlip: 0.01
-    m_ExtremumValue: 2.5
+    m_ExtremumValue: 2.9
     m_AsymptoteSlip: 0.6
     m_AsymptoteValue: 7.5
     m_Stiffness: 0.95
@@ -858,7 +858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   car: {fileID: 5487734654301208296}
-  downforceValue: 15
+  downforceValue: 20
 --- !u!1 &1630790289691526727
 GameObject:
   m_ObjectHideFlags: 0
@@ -1394,7 +1394,7 @@ WheelCollider:
     m_Stiffness: 0.9
   m_SidewaysFriction:
     m_ExtremumSlip: 0.01
-    m_ExtremumValue: 2.5
+    m_ExtremumValue: 2.9
     m_AsymptoteSlip: 0.6
     m_AsymptoteValue: 7.5
     m_Stiffness: 0.95
@@ -2433,7 +2433,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 842.3, y: -260}
+  m_AnchoredPosition: {x: 608, y: -231}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &5980811969731284693
@@ -2709,7 +2709,7 @@ WheelCollider:
     m_Stiffness: 0.9
   m_SidewaysFriction:
     m_ExtremumSlip: 0.01
-    m_ExtremumValue: 2.5
+    m_ExtremumValue: 2.9
     m_AsymptoteSlip: 0.6
     m_AsymptoteValue: 7.5
     m_Stiffness: 0.95
@@ -2895,7 +2895,7 @@ WheelCollider:
     m_Stiffness: 0.9
   m_SidewaysFriction:
     m_ExtremumSlip: 0.01
-    m_ExtremumValue: 2.5
+    m_ExtremumValue: 2.9
     m_AsymptoteSlip: 0.6
     m_AsymptoteValue: 7.5
     m_Stiffness: 0.95
@@ -3728,7 +3728,7 @@ MonoBehaviour:
   backLeftTransform: {fileID: 7161856139008176855}
   acceleration: 3750
   reverse: 0
-  brakingForce: 1300
+  brakingForce: 2000
   maxTurnAngle: 25
 --- !u!1 &9187364112740712935
 GameObject:
