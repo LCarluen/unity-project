@@ -5,7 +5,7 @@ using UnityEngine;
 public class RearWingDownforce : MonoBehaviour
 {
     public Rigidbody car;
-    public float downforceValue = 0.0f;
+    [Range(22,30)] public float downforceValue = 26.5f;
 
     void Update()
     {

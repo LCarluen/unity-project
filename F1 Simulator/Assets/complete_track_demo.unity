@@ -858,7 +858,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   car: {fileID: 5487734654301208296}
-  downforceValue: 20
+  downforceValue: 26.49
 --- !u!1 &1630790289691526727
 GameObject:
   m_ObjectHideFlags: 0
@@ -2920,7 +2920,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4993db64cc5b64abdb60b2561c4f9620, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CenterOfMass2: {x: 0, y: 0.32, z: -2.29}
+  CenterOfMass2: {x: 0, y: 0.16, z: -2.29}
   Awake: 0
 --- !u!1 &7460254858308057482
 GameObject:
@@ -3728,7 +3728,7 @@ MonoBehaviour:
   backLeftTransform: {fileID: 7161856139008176855}
   acceleration: 3750
   reverse: 0
-  brakingForce: 2000
+  brakingForce: 2100
   maxTurnAngle: 25
 --- !u!1 &9187364112740712935
 GameObject:
