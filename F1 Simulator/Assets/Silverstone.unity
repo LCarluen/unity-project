@@ -3547,7 +3547,7 @@ Transform:
   m_GameObject: {fileID: 7682521037205496641}
   m_LocalRotation: {x: -0, y: -0.9412729, z: -0, w: -0.33764678}
   m_LocalPosition: {x: -24.05, y: -5.32, z: 205.36}
-  m_LocalScale: {x: 30.44, y: 30.44, z: 30.44}
+  m_LocalScale: {x: 27.28, y: 27.28, z: 27.28}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 3364385162196556928}
@@ -3569,6 +3569,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef2e01757d68f49cdbef1d85ce4d6ac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  frontRight: {fileID: 3751550476396354679}
+  frontLeft: {fileID: 5266239829000639946}
+  backRight: {fileID: 3570531553220583986}
+  backLeft: {fileID: 5704758175936005485}
   initialTireHealth: 100
   tireDeteriorationRate: 0.1
   maxDeterioration: 1
