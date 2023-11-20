@@ -2281,7 +2281,7 @@ WheelCollider:
     m_Stiffness: 0.9
   m_SidewaysFriction:
     m_ExtremumSlip: 0.01
-    m_ExtremumValue: 2.9
+    m_ExtremumValue: 3.3
     m_AsymptoteSlip: 0.6
     m_AsymptoteValue: 7.5
     m_Stiffness: 0.95
@@ -3546,7 +3546,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7682521037205496641}
   m_LocalRotation: {x: -0, y: -0.9412729, z: -0, w: -0.33764678}
-  m_LocalPosition: {x: -24.05, y: -5.32, z: 205.36}
+  m_LocalPosition: {x: -24.05, y: -5.381, z: 205.36}
   m_LocalScale: {x: 27.28, y: 27.28, z: 27.28}
   m_ConstrainProportionsScale: 1
   m_Children:
