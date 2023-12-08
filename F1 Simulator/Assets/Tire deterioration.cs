@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TireDeterioration : MonoBehaviour
 {
@@ -11,8 +12,12 @@ public class TireDeterioration : MonoBehaviour
     public float maxDeterioration = 100f;
     public float colliderCircumference = 3.14f * 0.5f * 2f;
     public float wear = 0f;
-
     public float distanceTravelled = 0.0f;
+
+    [SerializeField] private Image P1;
+    [SerializeField] private Image P2;
+    [SerializeField] private Image P3;
+    [SerializeField] private Image P4;
 
     void FixedUpdate()
     {
@@ -39,6 +44,12 @@ public class TireDeterioration : MonoBehaviour
             WFC = backLeft.sidewaysFriction;
             WFC.extremumValue = 3.3f;
             backLeft.sidewaysFriction = WFC;
+
+            P1.color = new Color(0.1f, 1.0f, 0f, 0.6f);
+            P2.color = new Color(0.1f, 1.0f, 0f, 0.6f);
+            P3.color = new Color(0.1f, 1.0f, 0f, 0.6f);
+            P4.color = new Color(0.1f, 1.0f, 0f, 0.6f);
+
         }
         else if (wear <= 0.4f && wear > 0.2f)
         {
@@ -57,6 +68,12 @@ public class TireDeterioration : MonoBehaviour
             WFC = backLeft.sidewaysFriction;
             WFC.extremumValue = 3.1f;
             backLeft.sidewaysFriction = WFC;
+
+            P1.color = new Color(0.5f, 1.0f, 0f, 0.6f);
+            P2.color = new Color(0.5f, 1.0f, 0f, 0.6f);
+            P3.color = new Color(0.5f, 1.0f, 0f, 0.6f);
+            P4.color = new Color(0.5f, 1.0f, 0f, 0.6f);
+
         }
         else if (wear <= 0.6f && wear > 0.4f)
         {
@@ -75,6 +92,12 @@ public class TireDeterioration : MonoBehaviour
             WFC = backLeft.sidewaysFriction;
             WFC.extremumValue = 2.9f;
             backLeft.sidewaysFriction = WFC;
+
+            P1.color = new Color(1.0f, 1.0f, 0f, 0.6f);
+            P2.color = new Color(1.0f, 1.0f, 0f, 0.6f);
+            P3.color = new Color(1.0f, 1.0f, 0f, 0.6f);
+            P4.color = new Color(1.0f, 1.0f, 0f, 0.6f);
+
         }
         else if (wear <= 0.8f && wear > 0.6f)
         {
@@ -93,6 +116,11 @@ public class TireDeterioration : MonoBehaviour
             WFC = backLeft.sidewaysFriction;
             WFC.extremumValue = 2.7f;
             backLeft.sidewaysFriction = WFC;
+
+            P1.color = new Color(1.0f, 0.4f, 0f, 0.6f);
+            P2.color = new Color(1.0f, 0.4f, 0f, 0.6f);
+            P3.color = new Color(1.0f, 0.4f, 0f, 0.6f);
+            P4.color = new Color(1.0f, 0.4f, 0f, 0.6f);
         }
         else if (wear <= 1f && wear > 0.8f)
         {
@@ -111,6 +139,12 @@ public class TireDeterioration : MonoBehaviour
             WFC = backLeft.sidewaysFriction;
             WFC.extremumValue = 2.5f;
             backLeft.sidewaysFriction = WFC;
+
+            P1.color = new Color(1.0f, 0.0f, 0f, 0.6f);
+            P2.color = new Color(1.0f, 0.0f, 0f, 0.6f);
+            P3.color = new Color(1.0f, 0.0f, 0f, 0.6f);
+            P4.color = new Color(1.0f, 0.0f, 0f, 0.6f);
+
         }
     }
 }
