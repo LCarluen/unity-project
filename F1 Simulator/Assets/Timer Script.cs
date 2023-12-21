@@ -1,31 +1,56 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class TimerScript : MonoBehaviour
+public class LapTimer : MonoBehaviour
 {
-    public static int minCount;
-    public static int secCount;
-    public static float millisecCount;
-    public static string millisecDisplay;
-
+    public Text lapTimeText;
+    public Text bestLapTimeText;
     private float startTime;
-    private float currentTime;
-    private bool timerRunning = false;
+    private float currentLapTime;
+    private float bestLapTime = 5940;
+    private int lapAmount = 0;
+
+    void Start()
+    {
+        startTime = Time.time;
+        currentLapTime = 0f;
+        UpdateBestLapTime();
+    }
 
     void Update()
     {
-      if (timerRunning = true)
-      {
-        currentTime = Time.time - startTime;
-        Debug.Log(currentTime);
-      }
+        currentLapTime = Time.time - startTime;
+        UpdateLapTimeUI();
     }
 
-    private void OnTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
-      timerRunning = true;
-      startTime = Time.time;
+        lapAmount = lapAmount + 1;
+        if (currentLapTime < bestLapTime && lapAmount > 1)
+        {
+          bestLapTime = currentLapTime;
+          UpdateBestLapTime();
+        }
+        startTime = Time.time;
     }
 
+    void UpdateBestLapTime()
+    {
+        int minutes = Mathf.FloorToInt(bestLapTime / 60);
+        int seconds = Mathf.FloorToInt(bestLapTime % 60);
+        float milliseconds = (bestLapTime * 100) % 100;
+
+        bestLapTimeText.text = string.Format("{0:00}:{1:00}:{2:000}", minutes, seconds, milliseconds);
+    }
+
+    void UpdateLapTimeUI()
+    {
+        int minutes = Mathf.FloorToInt(currentLapTime / 60);
+        int seconds = Mathf.FloorToInt(currentLapTime % 60);
+        float milliseconds = (currentLapTime * 100) % 100;
+
+        lapTimeText.text = string.Format("{0:00}:{1:00}:{2:00}", minutes, seconds, milliseconds);
+    }
 }
